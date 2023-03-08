@@ -43,9 +43,9 @@ if (empty($session_user)) {
     <div class="container">
         <div class="row">
             <div class="ant006_header-logo">
-                <a href="index.php"><div><img src='images/gas_station.png' width="100" alt='G&B Gas station'></div>G&B Gas station</a>
+                <a href="index.php"><div><img src='images/gas_station.svg' width="100" alt='G&B Gas station'></div>G&B Gas station</a>
             </div>
-            <div class="col-lg-9 col-sm-6 col-md-12 col-6 ant006_header-menu-wrap">
+            <div class="col-lg-9 col-sm-6 col-md-12 col-6">
                 <nav class="ant006_header-container">
                     <ul class="menu">
                         <li class="menu-item">
@@ -131,7 +131,9 @@ if (empty($session_user)) {
     <div class="row">
         <div class="col-lg-5 ant007_footer__footer-item-wrap">
             <div class="footer-item">
-                <p>Эркенов Асхат 211-362.</p>
+                <p><a>Эркенов Асхат 211-362.</a></p>
+                <p><a href="https://data.mos.ru/opendata/7704221753-avtozapravochnye-stantsii-realizuyushchie-toplivo-sootvetstvuyushchee-ustanovlennym-ekologicheskim-trebovaniyam/data/table?versionNumber=5&releaseNumber=25">Автозаправочные станции, реализующие топливо, соответствующее установленным экологическим требованиям</a></p>
+                <p><a href="https://data.mos.ru/opendata/7704221753-avtozapravochnye-stantsii-realizuyushchie-toplivo-nesootvetstvuyushchee-ustanovlennym-ekologicheskim-trebovaniyam">Автозаправочные станции, реализующие топливо, несоответствующее установленным экологическим требованиям</a></p>
             </div>
         </div>
     </div>

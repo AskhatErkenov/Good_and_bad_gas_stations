@@ -1,9 +1,7 @@
 <?php
-$hostname = 'localhost';
-$userna = 'root';
-$passwor = '';
-$database = 'gas_stations';
-$connect = mysqli_connect($hostname, $userna, $passwor, $database);
-if ($connect->connect_errno) exit('Ошибка подключения к БД');
-
+$hostname = 'std-mysql';
+$username = 'std_1950_gas_stations';
+$password = 'bitva_1 1';
+$database = 'std_1950_gas_stations';
+$connect= new mysqli($hostname, $username, $password, $database);
 ?>

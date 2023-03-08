@@ -2,7 +2,7 @@
 include("connection.php");
 include("header.php");
 $bad_gas = "bad_gas_station";
-$sql = "SELECT * FROM `".$bad_gas."`";
+$sql = "SELECT * FROM `bad_gas_station`";
 $result = mysqli_query($connect, $sql);
 $address = [];
 while ($row = mysqli_fetch_array($result)) {
@@ -15,7 +15,7 @@ while ($row = mysqli_fetch_array($result)) {
 
 $good_gas = "good_gas_station";
 $sql1 = "SELECT * FROM `".$good_gas."`";
-$result1 = mysqli_query($connect, $good_gas);
+$result1 = mysqli_query($connect, $sql1);
 $address1 = [];
 while ($row1 = mysqli_fetch_array($result1)) {
     $coords1[] = $row1['Coordinates'];
