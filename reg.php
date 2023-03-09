@@ -5,7 +5,6 @@ $emai = "email";
 $usernam = "username";
 $pass = "password";
 if(isset($_POST)){
-
     if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass'])) {
         $username=htmlspecialchars($_POST['username']);
         $email=htmlspecialchars($_POST['email']);
@@ -18,6 +17,7 @@ if(isset($_POST)){
             $result=mysqli_query($connect, $sql);
             if($result){
                 $message = "Аккаунт успешно создан";
+                header("Location: login.php");
             } else {
                 $message = "Не удалось вставить информацию о данных!";
             }
