@@ -4,18 +4,17 @@ $user = "users";
 $emai = "email";
 $usernam = "username";
 $pass = "password";
-if(isset($_POST)){
-    if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass'])) {
-        $username=htmlspecialchars($_POST['username']);
-        $email=htmlspecialchars($_POST['email']);
-        $password=htmlspecialchars($_POST['pass']);
-        $query=mysqli_query($connect,"SELECT * FROM ".$user." WHERE ".$emai." = '". $email ."' AND ".$usernam."='".$username."'");
-        $numrows=mysqli_num_rows($query);
-        if($numrows==0)
-        {
-            $sql = "INSERT INTO `".$user."` (`username`, `email`, `password`) VALUES ('$username','$email', '$password')";
-            $result=mysqli_query($connect, $sql);
-            if($result){
+if (isset($_POST)) {
+    if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['pass'])) {
+        $username = htmlspecialchars($_POST['username']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['pass']);
+        $query = mysqli_query($connect, "SELECT * FROM " . $user . " WHERE " . $emai . " = '" . $email . "' AND " . $usernam . "='" . $username . "'");
+        $numrows = mysqli_num_rows($query);
+        if ($numrows == 0) {
+            $sql = "INSERT INTO `" . $user . "` (`username`, `email`, `password`) VALUES ('$username','$email', '$password')";
+            $result = mysqli_query($connect, $sql);
+            if ($result) {
                 $message = "Аккаунт успешно создан";
                 header("Location: login.php");
             } else {
@@ -30,14 +29,16 @@ if(isset($_POST)){
 }
 ?>
 
-<?php if (!empty($message)) {echo "<p class='error'>" . $message . "</p>";} ?>
+<?php if (!empty($message)) {
+    echo "<p class='error'>" . $message . "</p>";
+} ?>
 <!DOCTYPE html>
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>G&B Gas station</title>
-
+    <link rel="shortcut icon" href="images/gas_station.svg" type="image/x-icon">
     <link rel='stylesheet'
           href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&amp;subset=cyrillic'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css?ver=5.0.3' type='text/css'
@@ -65,7 +66,9 @@ if(isset($_POST)){
     <div class="container">
         <div class="row">
             <div class="ant006_header-logo">
-                <a href="index.php"><div><img src='images/gas_station.svg' width="100" alt='G&B Gas station'></div>G&B Gas station</a>
+                <a href="index.php">
+                    <div><img src='images/gas_station.svg' width="100" alt='G&B Gas station'></div>
+                    G&B Gas station</a>
             </div>
             <div class="col-lg-9 col-sm-6 col-md-12 col-6">
                 <nav class="ant006_header-container">
@@ -76,7 +79,7 @@ if(isset($_POST)){
                                     Главная
                                 </button>
                             </a></li>
-                        <li class="menu-item"><a href = "login.php">
+                        <li class="menu-item"><a href="login.php">
                                 <button class="floating-button">
                                     Авторизация
                                 </button>
@@ -100,12 +103,12 @@ if(isset($_POST)){
 						Регистрация
 					</span>
 
-                    <div class='wrap-input100 validate-input' data-validate = 'Введите логин'>
+                    <div class='wrap-input100 validate-input' data-validate='Введите логин'>
                         <input class='input100' type='text' name='username' placeholder='Логин'>
                         <span class='focus-input100' data-placeholder='&#xf207;'></span>
                     </div>
 
-                    <div class='wrap-input100 validate-input' data-validate = 'Введите email'>
+                    <div class='wrap-input100 validate-input' data-validate='Введите email'>
                         <input class='input100' type='text' name='email' placeholder='Email'>
                         <span class='focus-input100' data-placeholder='&#xf207;'></span>
                     </div>
@@ -135,8 +138,12 @@ if(isset($_POST)){
         <div class="col-lg-5 ant007_footer__footer-item-wrap">
             <div class="footer-item">
                 <p><a>Эркенов Асхат 211-362.</a></p>
-                <p><a href="https://data.mos.ru/opendata/7704221753-avtozapravochnye-stantsii-realizuyushchie-toplivo-sootvetstvuyushchee-ustanovlennym-ekologicheskim-trebovaniyam/data/table?versionNumber=5&releaseNumber=25">Автозаправочные станции, реализующие топливо, соответствующее установленным экологическим требованиям</a></p>
-                <p><a href="https://data.mos.ru/opendata/7704221753-avtozapravochnye-stantsii-realizuyushchie-toplivo-nesootvetstvuyushchee-ustanovlennym-ekologicheskim-trebovaniyam">Автозаправочные станции, реализующие топливо, несоответствующее установленным экологическим требованиям</a></p>
+                <p>
+                    <a href="https://data.mos.ru/opendata/7704221753-avtozapravochnye-stantsii-realizuyushchie-toplivo-sootvetstvuyushchee-ustanovlennym-ekologicheskim-trebovaniyam/data/table?versionNumber=5&releaseNumber=25">Автозаправочные
+                        станции, реализующие топливо, соответствующее установленным экологическим требованиям</a></p>
+                <p>
+                    <a href="https://data.mos.ru/opendata/7704221753-avtozapravochnye-stantsii-realizuyushchie-toplivo-nesootvetstvuyushchee-ustanovlennym-ekologicheskim-trebovaniyam">Автозаправочные
+                        станции, реализующие топливо, несоответствующее установленным экологическим требованиям</a></p>
             </div>
         </div>
     </div>

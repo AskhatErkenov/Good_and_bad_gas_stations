@@ -26,7 +26,7 @@ if (empty($session_user)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G&B Gas station</title>
-
+    <link rel="shortcut icon" href="images/gas_station.svg" type="image/x-icon">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&amp;subset=cyrillic">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css?ver=5.0.3' type='text/css'
