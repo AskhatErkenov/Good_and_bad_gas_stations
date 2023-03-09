@@ -1,7 +1,7 @@
 <?php
 require("connection.php");
 $user = "users";
-$email = "email";
+$emai = "email";
 $usernam = "username";
 $pass = "password";
 if(isset($_POST)){
@@ -10,11 +10,11 @@ if(isset($_POST)){
         $username=htmlspecialchars($_POST['username']);
         $email=htmlspecialchars($_POST['email']);
         $password=htmlspecialchars($_POST['pass']);
-        $query=mysqli_query($connect,"SELECT * FROM ".$user." WHERE ".$email." = '". $email ."' AND ".$usernam."='".$username."'");
+        $query=mysqli_query($connect,"SELECT * FROM ".$user." WHERE ".$emai." = '". $email ."' AND ".$usernam."='".$username."'");
         $numrows=mysqli_num_rows($query);
         if($numrows==0)
         {
-            $sql = "INSERT INTO `".$user."` (`".$usernam."`, `".$email."`, `".$password."`) VALUES ('$username','$email', '$password')";
+            $sql = "INSERT INTO `".$user."` (`username`, `email`, `password`) VALUES ('$username','$email', '$password')";
             $result=mysqli_query($connect, $sql);
             if($result){
                 $message = "Аккаунт успешно создан";
@@ -91,44 +91,44 @@ if(isset($_POST)){
 <?php include('connection.php'); ?>
 
 <form method='POST'>
-<div class='limiter'>
-    <div class='container-login100'>
-        <div class='wrap-login100'>
-            <form class='login100-form validate-form'>
+    <div class='limiter'>
+        <div class='container-login100'>
+            <div class='wrap-login100'>
+                <form class='login100-form validate-form'>
 
                 <span class='login100-form-title p-b-34 p-t-27'>
 						Регистрация
 					</span>
 
-                <div class='wrap-input100 validate-input' data-validate = 'Введите логин'>
-                    <input class='input100' type='text' name='username' placeholder='Логин'>
-                    <span class='focus-input100' data-placeholder='&#xf207;'></span>
-                </div>
-                
-                <div class='wrap-input100 validate-input' data-validate = 'Введите email'>
-                    <input class='input100' type='text' name='email' placeholder='Email'>
-                    <span class='focus-input100' data-placeholder='&#xf207;'></span>
-                </div>
+                    <div class='wrap-input100 validate-input' data-validate = 'Введите логин'>
+                        <input class='input100' type='text' name='username' placeholder='Логин'>
+                        <span class='focus-input100' data-placeholder='&#xf207;'></span>
+                    </div>
 
-                <div class='wrap-input100 validate-input' data-validate='Введите пароль'>
-                    <input class='input100' type='password' name='pass' placeholder='Пароль'>
-                    <span class='focus-input100' data-placeholder='&#xf191;'></span>
-                </div>
-                
-                <div class='wrap-input100 validate-input' data-validate='Ваши пароли не совподают'>
-                    <input class='input100' type='password' name='сonf_pass' placeholder='Подтвердите пароль'>
-                    <span class='focus-input100' data-placeholder='&#xf191;'></span>
-                </div>
+                    <div class='wrap-input100 validate-input' data-validate = 'Введите email'>
+                        <input class='input100' type='text' name='email' placeholder='Email'>
+                        <span class='focus-input100' data-placeholder='&#xf207;'></span>
+                    </div>
 
-                <div class='container-login100-form-btn'>
-                    <button class='login100-form-btn'>
-                        Зарегестрироваться
-                    </button>
-                </div>
-            </form>
+                    <div class='wrap-input100 validate-input' data-validate='Введите пароль'>
+                        <input class='input100' type='password' name='pass' placeholder='Пароль'>
+                        <span class='focus-input100' data-placeholder='&#xf191;'></span>
+                    </div>
+
+                    <div class='wrap-input100 validate-input' data-validate='Ваши пароли не совподают'>
+                        <input class='input100' type='password' name='сonf_pass' placeholder='Подтвердите пароль'>
+                        <span class='focus-input100' data-placeholder='&#xf191;'></span>
+                    </div>
+
+                    <div class='container-login100-form-btn'>
+                        <button class='login100-form-btn'>
+                            Зарегестрироваться
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </form>
 <footer id="ant-section__ant007_footer" class="">
     <div class="row">
